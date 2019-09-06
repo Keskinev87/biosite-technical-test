@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.users-section {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid lightgray;
+}
+
+.user-profile {
+  padding: 15px;
+  border-bottom: 1px solid darkgray;
+}
+
+.user-profile:hover {
+  background-color: lightgray;
+}
+
+.user-profile > span {
+  display: block;
+}
