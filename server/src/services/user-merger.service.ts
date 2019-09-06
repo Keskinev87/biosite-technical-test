@@ -1,10 +1,21 @@
 import { Injectable } from 'injection-js';
 import { User, Qualification } from './user-repository.service';
 import * as uuid from 'uuid/v4';
+import { IsOptional } from 'class-validator';
 
+
+
+export class MergeUsers {
+    @IsOptional()
+    ids: Array<string> = [];
+}
 
 @Injectable()
 export class UserMerger {
+    public constructor() {
+
+    }
+
     public merge(users: User[]): User {
         if (users.length === 0)
             throw new Error("Please select at least two users")
