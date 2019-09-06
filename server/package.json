@@ -12,8 +12,8 @@
     "start": "concurrently --kill-others \"tsc -w\" \"nodemon --delay 1 --watch dist | bunyan -o short\"",
     "lint": "tslint --fix './src/**/*.ts' './test-helpers/**/*.ts' --project .",
     "test": "jasmine-ts --config=jasmine.json",
-    "test:unit": "nodemon --ext ts,js,json node_modules/.bin/jasmine-ts --config=jasmine.json --filter=#unit",
-    "test:integration": "nodemon --ext ts,js,json node_modules/.bin/jasmine-ts --config=jasmine.json --filter=#integration",
+    "test:unit": "nodemon --ext ts,js,json node_modules/jasmine-ts --config=jasmine.json --filter=#unit",
+    "test:integration": "nodemon --ext ts,js,json node_modules/jasmine-ts --config=jasmine.json --filter=#integration",
     "cover": "nyc  -r lcov -e .ts -x \"*.spec.ts\" jasmine-ts --config=jasmine.json"
   },
   "author": "Biosite Systems",

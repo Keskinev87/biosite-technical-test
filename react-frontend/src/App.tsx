@@ -1,15 +1,11 @@
 import React from 'react';
 import './App.css';
+import UserListContainer from './components/user-list-container';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        Your App Here
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
+      <UserListContainer />
     </div>
   );
 }
