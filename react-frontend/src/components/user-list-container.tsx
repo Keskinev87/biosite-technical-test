@@ -50,20 +50,21 @@ class UserListComponent extends React.Component<{}, UserListState> {
 
     addNewUser() {
         console.log("Add new user");
+        let firstNames=["John", "Maria", "Ivan", "James"];
+        let lastNames =["Doe", "Cena", "Builder", "Franco"];
         fetch('http://localhost:8080/api/users/commands', {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'cors', // no-cors, cors, *same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache', 
+            credentials: 'same-origin',
             headers: {
                 'Content-Type': 'application/vnd.in.biosite.create-user+json',
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            redirect: 'follow', // manual, *follow, error
-            referrer: 'no-referrer', // no-referrer, *client
+            redirect: 'follow',
+            referrer: 'no-referrer',
             body: JSON.stringify({
-                firstName: "John",
-                lastName: "Doe"
+                firstName: firstNames[Math.round(Math.random() * 3)],
+                lastName: lastNames[Math.round(Math.random() * 3)]
             }), // body data type must match "Content-Type" header
         })
         .then(() => {
@@ -114,6 +115,12 @@ class UserListComponent extends React.Component<{}, UserListState> {
                 break;
             case this.state.isError:
                 element = <p>{this.state.error}</p>;
+                break;
+            case this.state.users.length === 0:
+                element = <div className="users-list-container">
+                            <p>There are no users in the DB. Click the button bellow to add a random one and fetch the list again...</p>
+                            <Button {...{onClick: this.addNewUser, name: "Add new user"}} />
+                        </div>
                 break;
             default:
                 element = <div className="users-list-container">
