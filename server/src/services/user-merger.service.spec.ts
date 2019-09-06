@@ -199,6 +199,7 @@ describe('#unit user merger service', () => {
             ];
 
             const newUser = service.merge(users);
+            console.log(newUser)
             expect(newUser.qualifications.length).toEqual(1);
             expect(newUser.qualifications[0].id).not.toEqual('a8b1bb81-226b-4b93-bb23-6d3b5bd45fec');
             expect(newUser.qualifications[0].type).toEqual('First aid');
