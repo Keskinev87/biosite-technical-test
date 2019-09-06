@@ -1,0 +1,77 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "no-unused-expression": [true, "allow-new"],
+    "quotemark": [true, "single"],
+    "member-access": false,
+    "object-literal-sort-keys": false,
+    "curly": false,
+    "no-bitwise": false, // We need to do some bitwise stuff :(
+    "max-classes-per-file": false,
+    "one-line": false,
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-pascal-case",
+        "allow-leading-underscore"
+      ]
+    },
+    "member-ordering": false,
+    "interface-name": false,
+    "interface-over-type-literal": false,
+    "object-literal-shorthand": false,
+    "max-line-length": false,
+    "no-empty": false,
+    "no-consecutive-blank-lines": false,
+
+    // This is on node with ES6, we don't need to care about this anymore :)
+    "radix": false,
+
+
+    // added in v5.1
+    "align": {
+      "options": [
+        "parameters",
+        "statements",
+        "members"
+      ]
+    },
+    "no-invalid-template-strings": true,
+    "no-sparse-arrays": true,
+
+    // added in v5.2, false because sometimes you do need to do a type assertion
+    // (e.g. when using types which are not completely accurate).
+    "no-object-literal-type-assertion": false,
+
+    // added in v5.3
+    "prefer-conditional-expression": false,
+    "prefer-object-spread": true,
+
+    // added in v5.4
+    "no-duplicate-variable": [true, "check-parameters"],
+
+    // added in v5.5, disabled because
+    "no-this-assignment": [true, {"allowed-names": ["^self$"]}],
+
+    // added in v5.6
+    "no-duplicate-imports": true,
+    "space-within-parens": [true, 0],
+    "no-submodule-imports": false,
+
+    // added in v5.7
+    "whitespace": {
+      "options": [
+        "check-branch",
+        "check-decl",
+        "check-operator",
+        "check-separator",
+        "check-type",
+        "check-typecast",
+        "check-type-operator",
+        "check-rest-spread"
+      ]
+    }
+
+  }
+}
