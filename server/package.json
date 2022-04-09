@@ -27,7 +27,7 @@
     "koa-helmet": "^4.2.0",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "reflect-metadata": "^0.1.13",
     "uuid": "^3.3.2"
   },
