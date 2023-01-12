@@ -19,7 +19,7 @@
   "author": "Biosite Systems",
   "dependencies": {
     "bunyan": "^1.8.12",
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "injection-js": "^2.2.1",
     "kcors": "^2.2.2",
     "koa": "^2.7.0",
